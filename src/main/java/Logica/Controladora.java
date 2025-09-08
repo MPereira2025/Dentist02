@@ -12,4 +12,9 @@ import Persistencia.ControladoraPersistencia;
  */
 public class Controladora {
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+    
+    public void crearUsuario(int id, String nombreUsuario, String password, String rol){
+        Usuario usu = new Usuario(id, nombreUsuario, password, rol);
+        controlPersis.crearUsuario(usu);
+    }
 }

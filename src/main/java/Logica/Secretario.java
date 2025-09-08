@@ -5,13 +5,17 @@
 package Logica;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
+@Entity
 public class Secretario extends Persona{
 private String sector;
+@OneToOne
 private Usuario anUser;
 
     public Secretario() {

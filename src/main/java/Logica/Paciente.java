@@ -4,17 +4,24 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
-public class Paciente extends Persona{
+@Entity
+public class Paciente extends Persona implements Serializable{
     private boolean tieneOS;
     private String typeBlood;
+    @OneToOne
     private Responsable anResponsable;
+    @OneToMany (mappedBy="pacien")
     private List<Turno> listTurno;
 
     public Paciente() {

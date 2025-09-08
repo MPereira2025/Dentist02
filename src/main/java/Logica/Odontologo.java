@@ -4,17 +4,25 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
-public class Odontologo extends Persona{
+@Entity
+public class Odontologo extends Persona implements Serializable{
     private String especialidad;
+    @OneToMany(mappedBy="odonto")
     private List<Turno> listTurno;
+    @OneToOne
     private Usuario anUser;
+    @OneToOne
     private Horario anHorario;
     
     

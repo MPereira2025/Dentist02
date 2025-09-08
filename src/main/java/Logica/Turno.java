@@ -4,18 +4,35 @@
  */
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author massi
  */
-public class Turno {
+@Entity
+public class Turno implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int idTurno;
+    @Temporal(TemporalType.DATE)
     private Date fechaTurno;
     private String horaTurno;
     private String afeccion;
+    @ManyToOne
+    @JoinColumn(name="pk_odonto")
     private Odontologo odonto;
+    @ManyToOne
+    @JoinColumn(name="pk_pacien")
     private Paciente pacien;
 
     public Turno() {

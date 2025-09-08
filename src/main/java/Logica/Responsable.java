@@ -5,13 +5,17 @@
 package Logica;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author massi
  */
+@Entity
 public class Responsable extends Persona{
     private String typeResponsable;
+    @OneToOne
     private Paciente anPaciente;
 
     public Responsable() {
