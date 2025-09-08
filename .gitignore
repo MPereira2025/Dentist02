@@ -1,0 +1,19 @@
+# Configuración privada de NetBeans
+nbproject/private/
+
+# Archivos de compilación
+build/
+dist/
+target/
+
+# Archivos de NetBeans que no aportan
+nbactions.xml
+nb-configuration.xml
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
