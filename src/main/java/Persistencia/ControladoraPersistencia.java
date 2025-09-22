@@ -11,7 +11,6 @@ import Logica.Usuario;
  * @author massi
  */
 public class ControladoraPersistencia {
-    HorarioJpaController horarioJpa = new HorarioJpaController();
     PersonaJpaController personJpa = new PersonaJpaController();
     OdontologoJpaController odonJpa = new OdontologoJpaController();
     PacienteJpaController pacienJpa = new PacienteJpaController();
@@ -19,7 +18,13 @@ public class ControladoraPersistencia {
     SecretarioJpaController secreJpa = new SecretarioJpaController();
     TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuJpa = new UsuarioJpaController();
+    HorarioJpaController horarioJpa = new HorarioJpaController();
 
+
+    public ControladoraPersistencia(){
+        
+    }
+    
     public void crearUsuario(Usuario usu) {
         usuJpa.create(usu);
     }
